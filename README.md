@@ -48,8 +48,7 @@
 
 10.參考資料
 
-
-  https://www.youtube.com/watch?v=lqNBbHDsoN0
-  https://www.youtube.com/watch?v=4K-iqTeLJhY
-  https://www.youtube.com/watch?v=bNOlimnWZJE&list=PLc6fhBPeC6SBbZFcrHLlPXyR2svfxf1RZ&index=20&t=507s
-  https://www.youtube.com/watch?v=9qTJdQUme80
+        https://www.youtube.com/watch?v=lqNBbHDsoN0
+        https://www.youtube.com/watch?v=4K-iqTeLJhY
+        https://www.youtube.com/watch?v=bNOlimnWZJE&list=PLc6fhBPeC6SBbZFcrHLlPXyR2svfxf1RZ&index=20&t=507s
+        https://www.youtube.com/watch?v=9qTJdQUme80
