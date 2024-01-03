@@ -11,6 +11,7 @@
 3.專案構想
 
 按照下面步驟，逐漸把坦克的雛型創造出來
+
       1.	利用履帶移動
       2.	砲塔可以進行轉向+砲管可以調整仰角
       3.	可以射擊及填充彈藥
@@ -46,6 +47,7 @@
 9.可以改進的地方
 
 10.參考資料
+
 
   https://www.youtube.com/watch?v=lqNBbHDsoN0
   https://www.youtube.com/watch?v=4K-iqTeLJhY
