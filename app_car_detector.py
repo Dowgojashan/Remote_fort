@@ -2,6 +2,7 @@ import time
 import numpy as np
 import cv2 as cv
 from flask import Flask, render_template, Response
+from camera_pi import Camera
 from picamera.array import PiRGBArray
 from picamera import PiCamera
 import basic.config as cfg
