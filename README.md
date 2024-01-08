@@ -1,11 +1,11 @@
 1.關於專案
 
 一台可以遠端操作，包含轉向、填彈、發射砲彈的炮台，可以開啟自動模式，透過模型訓練辨認出敵人後，能自動瞄準
-
+<hr>
 2.專案緣由
 
 從小就喜歡打電動，想要把遊戲中的坦克搬到現實中來玩
-
+<hr>
 3.專案構想
 
 按照下面步驟，逐漸把砲台的雛型創造出來
@@ -35,6 +35,7 @@
       15.   一堆固定材料
 
 5.實體照片、各裝置細節照片
+
 ![S__380510212_0](https://github.com/Dowgojashan/Remote_fort/assets/134786599/c72ebc66-f61f-485f-9bd5-f3e2001d51cf)
 <hr>
 
@@ -54,8 +55,28 @@
 
 6.電路配置
 
+底座裝置電路配置圖
+![S__15286277_0](https://github.com/Dowgojashan/Remote_fort/assets/134786599/4e76cfbb-30d5-4fd6-883a-121a46f73c8d)
+<hr>
 
-7.程式設計
+砲台裝置電路配置圖
+![S__15286275_0](https://github.com/Dowgojashan/Remote_fort/assets/134786599/85584766-010f-4591-9440-214fadd7f1e8)
+<hr>
+
+7.程式設計、環境設置
+
+      Web Server使用Flask去控制(參考連結:https://randomnerdtutorials.com/raspberry-pi-web-server-using-flask-to-control-gpios/)
+
+      camera pi設置(參考連結:https://github.com/Mjrovai/Video-Streaming-with-Flask/blob/master/camWebServer/camera_pi.py
+                       https://picamera.readthedocs.io/en/release-1.13/quickstart.html)
+                       
+      openvino環境設置(參考連結:https://hackmd.io/HV6hQ2PHSiWlrRsfxC10SA)
+      安裝好之後輸入下面兩個指令，下載本專案所需模型(可依需求替換)
+
+      wget https://download.01.org/opencv/2021/openvinotoolkit/2021.2/open_model_zoo/models_bin/3/vehicle-detection-0201/FP16/vehicle-detection-0201.bin
+
+      wget https://download.01.org/opencv/2021/openvinotoolkit/2021.2/open_model_zoo/models_bin/3/vehicle-detection-0201/FP16/vehicle-detection-0201.xml
+
 
 8.demo連結
 
