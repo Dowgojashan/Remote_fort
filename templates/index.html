@@ -8,64 +8,63 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </head>
   <body>
-    <div id="title">tank Controller</div>
+    <div id="title">Remote Fort</div>
     <div align="center">
-      <img src="{{ url_for('video_feed') }}" width="50%" />
+      <img src="{{ url_for('video_feed') }}" width="90%" />
     </div>
     <div>
-    <table>
+    <table class="float-left">
       <tr>
         <td>
           <form id="reload-form" action="/reload" method="post">
-            <input type="image" class="img" src="{{ url_for('static', filename='img/reload.jpg') }}" />
+            <input type="image" class="img" src="{{ url_for('static', filename='img/reload.jpg') }}" onclick="ButtonClick();"/>
           </form>
         </td>
         <td>
           <form id="shoot-form" action="/shoot" method="post">
-            <input type="image" class="img" src="{{ url_for('static', filename='img/shoot.png') }}" />
+            <input type="image" class="img" src="{{ url_for('static', filename='img/shoot.png') }}" onclick="ButtonClick();" />
           </form>
         </td>
       </tr>
     </table>
+    <table class="float-right">
+    <tr>
+      <td>
+        <h2>reload reset</h2>
+      </td>
+      <td>
+        <form id="reset_roload-form" action="/reset_reload" method="post">
+          <input type="image" class="img" src="{{ url_for('static', filename='img/reset.jpg') }}" onclick="ButtonClick();"/>
+        </form>
+      </td>
+    </tr>
+  </table>
     <table align="center">
       <tr>
         <td>
           <form id="left-form" action="/left" method="post">
-            <input type="image" class="img" src="{{ url_for('static', filename='img/left.png') }}" />
+            <input type="image" class="img" src="{{ url_for('static', filename='img/left.png') }}" onclick="ButtonClick();"/>
           </form>
         </td>
 
         <td>
           <form action="/stop" method="post">
-            <input type="image" class="img" src="{{ url_for('static', filename='img/stop.png') }}" />
+            <input type="image" class="img" src="{{ url_for('static', filename='img/stop.png') }}" onclick="ButtonClick();"/>
           </form>
         </td>
         <td>
           <form id="right-form" action="/right" method="post">
-            <input type="image" class="img" src="{{ url_for('static', filename='img/right.png') }}" />
+            <input type="image" class="img" src="{{ url_for('static', filename='img/right.png') }}" onclick="ButtonClick();"/>
           </form>
         </td>
       </tr>
     </table>
-    <table align = "right">
-      <h2>reload reset</h2>
-      <form id="reset_roload-form" action="/reset_reload" method="post">
-        <input type="image" class="img" src="{{ url_for('static', filename='img/reset.jpg') }}" />
-      </form>
-    </table>
     </div>
-    <script>
-        var actionInterval;
-
-      function startAction(action) {
-        $("#" + action + "-form").submit();
-        actionInterval = setInterval(function() {
-          $("#" + action + "-form").submit();
-        }, 500); // 設定執行動作的間隔，這裡設定為每 500 毫秒
-      }
-
-      function stopAction() {
-        clearInterval(actionInterval);
+    
+    
+    <script>      
+      function ButtonClick() {
+        return false
       }
 
       // 鍵盤事件處理
