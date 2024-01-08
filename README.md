@@ -44,6 +44,7 @@
 
 砲台裝置細節:
 ![S__380510214_0](https://github.com/Dowgojashan/Remote_fort/assets/134786599/452d7753-8ae5-4d37-a235-10b3a1b143fa)
+![S__380592130](https://github.com/Dowgojashan/Remote_fort/assets/134786599/eed61bf8-cb06-4d67-862e-9c08041d2511)
 
 砲台發射失敗可能的原因
 
