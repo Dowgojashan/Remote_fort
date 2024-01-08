@@ -122,9 +122,6 @@ def gen(camera):
     while True:
         # 捕獲單個幀
         frame = camera.get_frame()
-        
-        # 將影格轉換為 NumPy 數組
-        image = cv2.imdecode(np.frombuffer(frame, dtype=np.uint8), cv2.IMREAD_COLOR)
 
         # 在這裡執行對象辨識或其他處理
         processed_image = model.process_frame(frame)
@@ -136,13 +133,6 @@ def gen(camera):
         else:
             yield (b'--frame\r\n'
                 b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-def calculate_steer_angle(image_width, center_x):
-    # 這裡可以根據您的邏輯計算中心位置的偏移量，並轉換成轉向角度
-    # 這只是一個示例，您可能需要更複雜的計算邏輯
-    offset = center_x - image_width // 2
-    steer_angle = offset * 0.1  # 假設轉向角度與中心位置偏移量成線性關係
-
-    return steer_angle
 
 
 @app.route('/video_feed')
