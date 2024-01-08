@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div id="title">tank Controller</div>
+    <div align="center">
+      <img src="{{ url_for('video_feed') }}" width="50%" />
+    </div>
+    <div>
+    <table>
+      <tr>
+        <td>
+          <form id="reload-form" action="/reload" method="post">
+            <input type="image" class="img" src="{{ url_for('static', filename='img/reload.jpg') }}" />
+          </form>
+        </td>
+        <td>
+          <form id="shoot-form" action="/shoot" method="post">
+            <input type="image" class="img" src="{{ url_for('static', filename='img/shoot.png') }}" />
+          </form>
+        </td>
+      </tr>
+    </table>
+    <table align="center">
+      <tr>
+        <td>
+          <form id="left-form" action="/left" method="post">
+            <input type="image" class="img" src="{{ url_for('static', filename='img/left.png') }}" />
+          </form>
+        </td>
+
+        <td>
+          <form action="/stop" method="post">
+            <input type="image" class="img" src="{{ url_for('static', filename='img/stop.png') }}" />
+          </form>
+        </td>
+        <td>
+          <form id="right-form" action="/right" method="post">
+            <input type="image" class="img" src="{{ url_for('static', filename='img/right.png') }}" />
+          </form>
+        </td>
+      </tr>
+    </table>
+    <table align = "right">
+      <h2>reload reset</h2>
+      <form id="reset_roload-form" action="/reset_reload" method="post">
+        <input type="image" class="img" src="{{ url_for('static', filename='img/reset.jpg') }}" />
+      </form>
+    </table>
+    </div>
+    <script>
+        var actionInterval;
+
+      function startAction(action) {
+        $("#" + action + "-form").submit();
+        actionInterval = setInterval(function() {
+          $("#" + action + "-form").submit();
+        }, 500); // 設定執行動作的間隔，這裡設定為每 500 毫秒
+      }
+
+      function stopAction() {
+        clearInterval(actionInterval);
+      }
+
+      // 鍵盤事件處理
+      $(document).keydown(function(e) {
+        switch (e.key) {
+          case 'ArrowLeft':
+            startAction('left');
+            break;
+          case 'ArrowRight':
+            startAction('right');
+            break;
+        }
+      });
+
+      $(document).keyup(function(e) {
+        switch (e.key) {
+          case 'ArrowLeft':
+          case 'ArrowRight':
+            stopAction();
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
